@@ -1,0 +1,55 @@
+server:
+  port: 5454
+
+spring:
+  
+  profiles:
+    active: prod
+    
+
+    
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:ecommerce_multi_vendor}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:Rashi@1234}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: rajawatrashi18@gmail.com
+    password: usfe xvhx qjyf ldto  # \u2757Consider using an App Password, not your main Gmail password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  devtools:
+    livereload:
+      enabled: true
+
+razorpay:
+  api:
+    key: rzp_test_SismDJ3U193rnN
+    secret: NAp5LhammeBAUbi8hLWLN8za
+
+stripe:
+  api:
+    key: pk_test_51Rop1mKCrfZorNHDsXbJwnbJBw20GcGFX3b2X1wpNfxGBDgOhJtpdyjQ2xT2Syn8SjVdjIbtbiqDjHuzyHuVKCYd00mU4mNNZt
+
+gemini:
+  api:
+    key: AIzaSyDW4d03SUHya9SOhARpjsgdER7BHlRHF5s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
